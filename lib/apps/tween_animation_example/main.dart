@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class TweenAnimationPage extends StatefulWidget {
@@ -38,13 +40,16 @@ class _TweenAnimationPageState extends State<TweenAnimationPage> {
                   ),
                 Opacity(
                   opacity: 1 - value,
-                  child: Transform.translate(
-                    offset: Offset(0, value * -80),
-                    child: Text(
-                      count.toString(),
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50,
+                  child: Transform.rotate(
+                    angle: -value * pi,
+                    child: Transform.translate(
+                      offset: Offset(0, value * -100),
+                      child: Text(
+                        count.toString(),
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 50,
+                        ),
                       ),
                     ),
                   ),
